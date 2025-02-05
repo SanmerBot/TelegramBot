@@ -1,0 +1,23 @@
+name: Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * *"
+
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build
+        run: cargo install --path .
+
+      - name: Dler
+        run: bot dler --token='${{ secrets.BOT_TOKEN }}' --email='${{ secrets.DLER_EMAIL }}' --password='${{ secrets.DLER_PASSWORD }}' --chat=${{ secrets.CHAT_ID }}
