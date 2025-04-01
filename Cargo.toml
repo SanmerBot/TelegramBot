@@ -8,7 +8,7 @@ askama = { version = "0.13", default-features = false, features = ["derive", "st
 clap = { version = "4", features = ["derive"] }
 reqwest = { version = "0.12", default-features = false, features = ["http2", "json"] }
 serde = { version = "1", features = ["derive"] }
-teloxide = { version = "0.13", default-features = false }
+teloxide = { version = "0.14", default-features = false }
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 tracing = { version = "0.1", default-features = false }
 tracing-subscriber = "0.3"
